@@ -7,6 +7,9 @@ else
   exit 1
 fi
 
+echo "Creating models directory..."
+mkdir -p models
+
 cd models
 
 echo "Downloading models, this might take a while!"
