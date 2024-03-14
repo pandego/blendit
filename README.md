@@ -1,4 +1,4 @@
-# blendit 🍸
+# blend🍸t
 A simple LLM blender, to easily combine the best available open-source large language models into a super one.
 
 ## 1. Setup your Environment
@@ -14,7 +14,8 @@ A simple LLM blender, to easily combine the best available open-source large lan
     poetry install
     ```
 
-### Add MergeKit as a SubModule
+---
+### How I added MergeKit as a SubModule
 - To add [mergekit](https://github.com/arcee-ai/mergekit) repository as a submodule, you use:
     ```bash
     git submodule add https://github.com/arcee-ai/mergekit.git src/mergekit/
@@ -23,6 +24,7 @@ A simple LLM blender, to easily combine the best available open-source large lan
     ```bash
     git submodule update --init --recursive
     ```
+---
 
 ### Install [MergeKit](https://github.com/cg123/mergekit)
 - Follow the following commands to setup mergekit, which is necessary to run this repo:
@@ -49,13 +51,13 @@ mergekit-yaml src/config/example_task_arithmetic.yaml models/merged-models/my-fi
 --allow-crimes \         # experimental: allows blends of different model architectures
 --copy-tokenizer \       # copies the tokenizer from the base model
 --out-shard-size 1B \    # splits model so it can be load in smaller RAMs
---lazy-unpickle \  # experimental: lowers memory usage
+--lazy-unpickle \        # experimental: lowers memory usage
 --write-model-card
 ```
 
 ---
 
-#TODOs:
+#TODOs
 
     [ ] Add way to test model locally
     [ ] Add way to submit it to HF for evaluation
