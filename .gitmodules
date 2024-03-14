@@ -1,0 +1,3 @@
+[submodule "src/mergekit"]
+	path = src/mergekit
+	url = https://github.com/arcee-ai/mergekit.git
