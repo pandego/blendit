@@ -26,7 +26,7 @@ A simple LLM blender, to easily combine the best available open-source large lan
     ```
 ---
 
-### Install [MergeKit](https://github.com/cg123/mergekit)
+### Install [MergeKit](https://github.com/cg123/mergekit) Module
 - Follow the following commands to setup mergekit, which is necessary to run this repo:
     ```bash
     pip install -e src/mergekit  # install the package and make scripts available
