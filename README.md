@@ -42,7 +42,7 @@ A simple LLM blender, to easily combine the best available open-source large lan
 
 
 ## 2. Blend it
-In order to blend models you will have to setup a `config.yaml` file with the instructions for the blend. You can find some examples in `src/config/`.
+In order to blend models you will have to setup a `config.yaml` file with the instructions for the blend. You can find some examples in `src/config/`. If you need to download 
 
 - Run the follow command to launch the blend, and let it shake 🍸
 
@@ -54,6 +54,11 @@ mergekit-yaml src/config/example_task_arithmetic.yaml models/merged-models/my-fi
 --lazy-unpickle \        # experimental: lowers memory usage
 --write-model-card
 ```
+
+- If you need to download a set of models to get started with the example above, you can run the following command:
+    ```bash
+    bash download_models.sh
+    ```
 
 ---
 
