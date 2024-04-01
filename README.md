@@ -42,12 +42,12 @@ A simple LLM blender, to easily combine the best available open-source large lan
 
 
 ## 2. Blend it
-In order to blend models you will have to setup a `config.yaml` file with the instructions for the blend. You can find some examples in `src/config/`. If you need to download 
+In order to blend models you will have to setup a `config.yaml` file with the instructions for the blend. You can find some examples in `src/config/`.
 
 - Run the follow command to launch the blend, and let it shake 🍸
 
 ```bash
-mergekit-yaml src/config/example_task_arithmetic.yaml models/merged-models/my-first-blend/ \
+mergekit-yaml src/config/example_task_arithmetic.yaml models/merged-models/my-first-blend \
 --allow-crimes \         # experimental: allows blends of different model architectures
 --copy-tokenizer \       # copies the tokenizer from the base model
 --out-shard-size 1B \    # splits model so it can be load in smaller RAMs
