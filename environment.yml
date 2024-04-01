@@ -2,7 +2,7 @@ name: blendit
 channels:
   - defaults
 dependencies:
-  - pip=23.3.1=py311hca03da5_0
-  - python=3.11.8=hb885b13_0
+  - pip=23.3.1
+  - python=3.10.14
   - pip:
       - poetry==1.8.2

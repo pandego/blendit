@@ -8,8 +8,13 @@
 # The script will require the user to have a Hugging Face username
 # The script will require the user to have a model name
 
+# Get HF_TOKEN from User
+read -p "Please enter your HuggingFace Token: " HF_TOKEN
+read -p "Please enter your HuggingFace Username: " HF_USERNAME
+read -p "Please enter your Model's name: " MODEL_NAME
+
 # log in to huggingface with an access token (must have write permission)
-huggingface-cli login
+huggingface-cli login --token $HF_TOKEN
 
 # upload your model
-huggingface-cli upload your_hf_username/my-cool-model ./output-model-directory .
+huggingface-cli upload --repo-type model $HF_USERNAME/$MODEL_NAME models/merged-models/$MODEL_NAME

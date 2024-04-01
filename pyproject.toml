@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "blendit", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 streamlit = "^1.32.2"
 mergekit = {git = "https://github.com/cg123/mergekit", tag = "v0.0.4"}
 
