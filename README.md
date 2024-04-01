@@ -1,6 +1,10 @@
 # blend🍸t
 A simple LLM blender, to easily combine the best available open-source large language models into a super one.
 
+### Pre-requisites
+- [git](https://git-scm.com)
+- [Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/)
+
 ## 1. Setup your Environment
 ### Install Dependencies
 - Clone this repository and navigate into it:
@@ -9,37 +13,18 @@ A simple LLM blender, to easily combine the best available open-source large lan
     cd blendit
     ```
 
+- Create and activate your Python Environment:
+    ```bash
+    conda env create -f envrionment.yml
+    conda activate blendit
+    ```
+
 - Initiate your project with `poetry`:
     ```bash
     poetry install
     ```
 
----
-### How I added MergeKit as a SubModule
-- To add [mergekit](https://github.com/arcee-ai/mergekit) repository as a submodule, you use:
-    ```bash
-    git submodule add https://github.com/arcee-ai/mergekit.git src/mergekit/
-    ```
-- (Optional) After adding a submodule, it's good practice to initialize the submodule and fetch its data with:
-    ```bash
-    git submodule update --init --recursive
-    ```
----
-
-### Install [MergeKit](https://github.com/cg123/mergekit) Module
-- Follow the following commands to setup mergekit, which is necessary to run this repo:
-    ```bash
-    pip install -e src/mergekit  # install the package and make scripts available
-    ```
-
-- If the above fails with the error of:
-    ```bash
-    ERROR: File "setup.py" or "setup.cfg" not found. Directory cannot be installed in editable mode:
-    (A "pyproject.toml" file was found, but editable mode currently requires a setuptools-based build.)
-    ```
-
-- You may need to upgrade pip to > 21.3 with the command `python3 -m pip install --upgrade pip`
-
+That's it for the Python environment!
 
 ## 2. Blend it
 In order to blend models you will have to setup a `config.yaml` file with the instructions for the blend. You can find some examples in `src/config/`.
@@ -50,9 +35,11 @@ In order to blend models you will have to setup a `config.yaml` file with the in
 mergekit-yaml src/config/example_task_arithmetic.yaml models/merged-models/my-first-blend \
 --allow-crimes \         # experimental: allows blends of different model architectures
 --copy-tokenizer \       # copies the tokenizer from the base model
---out-shard-size 1B \    # splits model so it can be load in smaller RAMs
+--out-shard-size 1B \    # splits model so it can be load in smaller RAMs (default: parse_kmb("5B"))
 --lazy-unpickle \        # experimental: lowers memory usage
---write-model-card
+--write-model-card \
+--low-cpu-memory
+--random-seed 123
 ```
 
 - If you need to download a set of models to get started with the example above, you can run the following command:
